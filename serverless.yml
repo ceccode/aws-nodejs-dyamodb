@@ -59,6 +59,14 @@ functions:
   hello:
     handler: handler.hello
 
+  list:
+    handler: todos/list.list
+    events:
+      - http:
+          path: todos
+          method: get
+          cors: true
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -103,3 +111,6 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-offline
